@@ -1,0 +1,26 @@
+﻿@model TPPizza.Models.VMPizz
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Pizza.Id)
+
+    <div class="form-horizontal">
+        @Html.Partial("_affichagePizz")
+        <div><button class="btn danger" type="submit">Sauvegarder</button></div>
+        </div>
+}
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
