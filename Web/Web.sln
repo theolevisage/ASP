@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "Web\BO\BO.csproj", "{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{6066EAAA-6025-49BC-A1F3-FC6447C42CD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPChats", "Web\TPChats\TPChats.csproj", "{7C943F19-B20D-4C83-9143-A5329FCB024D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPChats", "TPChats\TPChats.csproj", "{7C943F19-B20D-4C83-9143-A5329FCB024D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPPizza", "Web\TPPizza\TPPizza.csproj", "{89E0260E-2612-476E-891D-C7F7937F63FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPPizz", "TPPizza\TPPizz.csproj", "{89E0260E-2612-476E-891D-C7F7937F63FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
