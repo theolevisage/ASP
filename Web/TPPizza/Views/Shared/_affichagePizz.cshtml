@@ -21,7 +21,7 @@
     @Html.LabelFor(model => model.Pizza, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
         @Html.ListBoxFor(model => model.IdsIngedients, Model.Ingredients.Select(x => new SelectListItem() { Text = x.Nom, Value = x.Id.ToString() }), new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Pizza.Ingredients, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.IdsIngedients, "", new { @class = "text-danger" })
     </div>
 
 </div>

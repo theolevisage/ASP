@@ -14,6 +14,7 @@ namespace TPPizza.Models
         public List<Ingredient> Ingredients { get; set; }
         public List<Pate> Pates { get; set; }
         [Validatorum]
+        [Recetorum]
         public List<int> IdsIngedients { get; set; }
         [Required]
         public int? IdPate { get; set; }

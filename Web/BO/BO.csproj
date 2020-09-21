@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\FakeDb.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="Pate.cs" />
     <Compile Include="Pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Recetorum.cs" />
+    <Compile Include="Validation\Uniquorum.cs" />
     <Compile Include="Validation\Validatorum.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

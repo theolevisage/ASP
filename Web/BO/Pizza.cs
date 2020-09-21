@@ -1,9 +1,6 @@
-﻿using System;
+﻿using BO.Validation;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BO
 {
@@ -13,6 +10,7 @@ namespace BO
         [Required]
         [System.ComponentModel.DataAnnotations.MinLength(5, ErrorMessage = "Non")]
         [System.ComponentModel.DataAnnotations.MaxLength(20)]
+        [Uniquorum]
         public string Nom { get; set; }
         public Pate Pate { get; set; }
         [Required]

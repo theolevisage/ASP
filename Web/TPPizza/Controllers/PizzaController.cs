@@ -51,25 +51,38 @@ namespace TPPizza.Controllers
         {
             try
             {
-                var fdb = FakeDb.Instance;
-                vm.Pizza.Pate = fdb.ListePatesDispo.FirstOrDefault(x => x.Id == vm.IdPate);
-                foreach (int ingredient in vm.IdsIngedients)
+                if (ModelState.IsValid) 
                 {
-                    vm.Pizza.Ingredients.Add(fdb.ListeIngredientsDispo.FirstOrDefault(x => x.Id == ingredient));
-                }
-                vm.Pizza.Id =fdb.ListePizzas.Count == 0 ? 1 : fdb.ListePizzas.Max(x => x.Id) + 1; ;
-                fdb.ListePizzas.Add(vm.Pizza);
-                
 
-                return RedirectToAction("Index");
+                    var fdb = FakeDb.Instance;
+                    vm.Pizza.Pate = fdb.ListePatesDispo.FirstOrDefault(x => x.Id == vm.IdPate);
+                    foreach (int ingredient in vm.IdsIngedients)
+                    {
+                        vm.Pizza.Ingredients.Add(fdb.ListeIngredientsDispo.FirstOrDefault(x => x.Id == ingredient));
+                    }
+                    vm.Pizza.Id = fdb.ListePizzas.Count == 0 ? 1 : fdb.ListePizzas.Max(x => x.Id) + 1; ;
+                    fdb.ListePizzas.Add(vm.Pizza);
+
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return resetVM(vm);
+                }
+
             }
             catch(Exception)
             {
-                var fdb = FakeDb.Instance;
-                vm.Pates = fdb.ListePatesDispo;
-                vm.Ingredients = fdb.ListeIngredientsDispo;
-                return View(vm);
+                return resetVM(vm);
             }
+        }
+
+        private ActionResult resetVM(VMPizz vm)
+        {
+            var fdb = FakeDb.Instance;
+            vm.Pates = fdb.ListePatesDispo;
+            vm.Ingredients = fdb.ListeIngredientsDispo;
+            return View(vm);
         }
 
         // GET: Pizza/Edit/5
