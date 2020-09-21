@@ -1,11 +1,11 @@
-﻿using BO;
+﻿using Entity_Pizz;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BO.Validation
+namespace Entity_Pizz.Validation
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class Validatorum : ValidationAttribute

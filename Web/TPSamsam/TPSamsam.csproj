@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{89E0260E-2612-476E-891D-C7F7937F63FE}</ProjectGuid>
+    <ProjectGuid>{26468180-076F-45EF-B435-EF4811DC15F4}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TPPizza</RootNamespace>
-    <AssemblyName>TPPizza</AssemblyName>
+    <RootNamespace>TPSamsam</RootNamespace>
+    <AssemblyName>TPSamsam</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,8 +126,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArmesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PizzaController.cs" />
+    <Compile Include="Controllers\SamouraisController.cs" />
+    <Compile Include="Data\TPSamsamContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -163,16 +171,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Pizza\Index.cshtml" />
-    <Content Include="Views\Pizza\Create.cshtml" />
-    <Content Include="Views\Pizza\Delete.cshtml" />
-    <Content Include="Views\Pizza\Edit.cshtml" />
-    <Content Include="Views\Pizza\Details.cshtml" />
-    <Content Include="Views\Shared\_affichagePizz.cshtml" />
+    <Content Include="Views\Samourais\Create.cshtml" />
+    <Content Include="Views\Samourais\Delete.cshtml" />
+    <Content Include="Views\Samourais\Details.cshtml" />
+    <Content Include="Views\Samourais\Edit.cshtml" />
+    <Content Include="Views\Samourais\Index.cshtml" />
+    <Content Include="Views\Armes\Create.cshtml" />
+    <Content Include="Views\Armes\Delete.cshtml" />
+    <Content Include="Views\Armes\Details.cshtml" />
+    <Content Include="Views\Armes\Edit.cshtml" />
+    <Content Include="Views\Armes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Fakes\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -189,9 +200,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BO\Entity_Pizz.csproj">
-      <Project>{6066eaaa-6025-49bc-a1f3-fc6447c42cd9}</Project>
-      <Name>Entity_Pizz</Name>
+    <ProjectReference Include="..\Entity_Samourai\Entity_Samourai.csproj">
+      <Project>{0bba0441-0ab7-4112-946b-521c9cec7367}</Project>
+      <Name>Entity_Samourai</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -210,9 +221,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>14854</DevelopmentServerPort>
+          <DevelopmentServerPort>9207</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:14854/</IISUrl>
+          <IISUrl>http://localhost:9207/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

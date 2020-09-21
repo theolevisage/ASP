@@ -1,8 +1,8 @@
-﻿using BO.Validation;
+﻿using Entity_Pizz.Validation;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BO
+namespace Entity_Pizz
 {
     public class Pizza
     {

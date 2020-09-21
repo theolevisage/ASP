@@ -1,4 +1,4 @@
-﻿using BO;
+﻿using Entity_Pizz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace TPModule3.Database
            this.ListeIngredientsDispo = new List<Ingredient>
         {
             new Ingredient{Id=1,Nom="Mozzarella"},
-            new Ingredient{Id=2,Nom="Jambon"},
+            new Ingredient{Id=2,Nom="JamEntity_Pizzn"},
             new Ingredient{Id=3,Nom="Tomate"},
             new Ingredient{Id=4,Nom="Oignon"},
             new Ingredient{Id=5,Nom="Cheddar"},

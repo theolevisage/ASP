@@ -1,4 +1,4 @@
-﻿namespace BO
+﻿namespace Entity_Pizz
 {
     public class Pate
     {

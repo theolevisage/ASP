@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TPModule3.Database;
+using TPPizza.Models;
 
-namespace BO.Validation
+namespace Entity_Pizz.Validation
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class Recetorum : ValidationAttribute
