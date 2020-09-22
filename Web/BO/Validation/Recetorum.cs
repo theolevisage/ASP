@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using TPModule3.Database;
-using TPPizza.Models;
 
 namespace Entity_Pizz.Validation
 {

@@ -1,10 +1,7 @@
-﻿using BO;
-using BO.Validation;
-using System;
+﻿using Entity_Pizz;
+using Entity_Pizz.Validation;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace TPPizza.Models
 {

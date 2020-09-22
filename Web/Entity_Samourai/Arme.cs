@@ -1,8 +1,8 @@
-﻿namespace BO
+﻿namespace Entity_Samourai
 {
     public class Arme
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Nom { get; set; }
         public int Degats { get; set; }
     }

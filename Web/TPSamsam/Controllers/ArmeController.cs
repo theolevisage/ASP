@@ -1,117 +1,120 @@
-﻿using System;
+﻿using Entity_Samourai;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using BO;
 using TPSamsam.Data;
 
 namespace TPSamsam.Controllers
 {
-    public class SamouraisController : Controller
+    public class ArmeController : Controller
     {
         private TPSamsamContext db = new TPSamsamContext();
 
-        // GET: Samourais
+        // GET: Armes
         public ActionResult Index()
         {
-            return View(db.Samourais.ToList());
+            return View(db.Armes.ToList());
         }
 
-        // GET: Samourais/Details/5
+        // GET: Armes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Samourai samourai = db.Samourais.Find(id);
-            if (samourai == null)
+            Arme arme = db.Armes.Find(id);
+            if (arme == null)
             {
                 return HttpNotFound();
             }
-            return View(samourai);
+            return View(arme);
         }
 
-        // GET: Samourais/Create
+        // GET: Armes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Samourais/Create
+        // POST: Armes/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Force,Nom")] Samourai samourai)
+        public ActionResult Create([Bind(Include = "Id,Nom,Degats")] Arme arme)
         {
             if (ModelState.IsValid)
             {
-                db.Samourais.Add(samourai);
+                db.Armes.Add(arme);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(samourai);
+            return View(arme);
         }
 
-        // GET: Samourais/Edit/5
+        // GET: Armes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Samourai samourai = db.Samourais.Find(id);
-            if (samourai == null)
+            Arme arme = db.Armes.Find(id);
+            if (arme == null)
             {
                 return HttpNotFound();
             }
-            return View(samourai);
+            return View(arme);
         }
 
-        // POST: Samourais/Edit/5
+        // POST: Armes/Edit/5
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Force,Nom")] Samourai samourai)
+        public ActionResult Edit([Bind(Include = "Id,Nom,Degats")] Arme arme)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(samourai).State = EntityState.Modified;
+                db.Entry(arme).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(samourai);
+            return View(arme);
         }
 
-        // GET: Samourais/Delete/5
+        // GET: Armes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Samourai samourai = db.Samourais.Find(id);
-            if (samourai == null)
+            Arme arme = db.Armes.Find(id);
+            if (arme == null)
             {
                 return HttpNotFound();
             }
-            return View(samourai);
+            return View(arme);
         }
 
-        // POST: Samourais/Delete/5
+        // POST: Armes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Samourai samourai = db.Samourais.Find(id);
-            db.Samourais.Remove(samourai);
+            Arme arme = db.Armes.Find(id);
+            List<Samourai> sam = db.Samourais.ToList();
+            sam = sam.Where(x => x.Arme != null && x.Arme.Id == id).ToList();
+            foreach(Samourai item in sam)
+            {
+                item.Arme = null;
+            }
+            db.Armes.Remove(arme);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

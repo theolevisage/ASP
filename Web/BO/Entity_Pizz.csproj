@@ -49,6 +49,7 @@
     <Compile Include="Validation\Recetorum.cs" />
     <Compile Include="Validation\Uniquorum.cs" />
     <Compile Include="Validation\Validatorum.cs" />
+    <Compile Include="VMPizz.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

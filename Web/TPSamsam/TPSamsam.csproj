@@ -126,9 +126,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ArmesController.cs" />
+    <Compile Include="Controllers\ArmeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SamouraisController.cs" />
+    <Compile Include="Controllers\SamouraiController.cs" />
     <Compile Include="Data\TPSamsamContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -137,7 +137,12 @@
     <Compile Include="Migrations\202009211445478_MigrationDojo.Designer.cs">
       <DependentUpon>202009211445478_MigrationDojo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009220732305_MigrationDojo2.cs" />
+    <Compile Include="Migrations\202009220732305_MigrationDojo2.Designer.cs">
+      <DependentUpon>202009220732305_MigrationDojo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\VMDojo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,20 +181,21 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Samourais\Create.cshtml" />
-    <Content Include="Views\Samourais\Delete.cshtml" />
-    <Content Include="Views\Samourais\Details.cshtml" />
-    <Content Include="Views\Samourais\Edit.cshtml" />
-    <Content Include="Views\Samourais\Index.cshtml" />
-    <Content Include="Views\Armes\Create.cshtml" />
-    <Content Include="Views\Armes\Delete.cshtml" />
-    <Content Include="Views\Armes\Details.cshtml" />
-    <Content Include="Views\Armes\Edit.cshtml" />
-    <Content Include="Views\Armes\Index.cshtml" />
+    <Content Include="Views\Samourai\Create.cshtml" />
+    <Content Include="Views\Samourai\Delete.cshtml" />
+    <Content Include="Views\Samourai\Details.cshtml" />
+    <Content Include="Views\Samourai\Edit.cshtml" />
+    <Content Include="Views\Samourai\Index.cshtml" />
+    <Content Include="Views\Arme\Create.cshtml" />
+    <Content Include="Views\Arme\Delete.cshtml" />
+    <Content Include="Views\Arme\Details.cshtml" />
+    <Content Include="Views\Arme\Edit.cshtml" />
+    <Content Include="Views\Arme\Index.cshtml" />
+    <Content Include="Views\Shared\_samuraiGen.cshtml" />
+    <Content Include="Views\Shared\_samuraiRead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -213,6 +219,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009211445478_MigrationDojo.resx">
       <DependentUpon>202009211445478_MigrationDojo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009220732305_MigrationDojo2.resx">
+      <DependentUpon>202009220732305_MigrationDojo2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

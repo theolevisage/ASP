@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BO.Samourai>
+﻿@model IEnumerable<Entity_Samourai.Arme>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Force)
+            @Html.DisplayNameFor(model => model.Nom)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nom)
+            @Html.DisplayNameFor(model => model.Degats)
         </th>
         <th></th>
     </tr>
@@ -23,10 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Force)
+            @Html.DisplayFor(modelItem => item.Nom)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Nom)
+            @Html.DisplayFor(modelItem => item.Degats)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
