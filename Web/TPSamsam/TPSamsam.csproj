@@ -144,6 +144,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\VMDojo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Unikashi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

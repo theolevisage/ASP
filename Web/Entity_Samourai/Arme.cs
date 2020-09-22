@@ -1,8 +1,7 @@
 ﻿namespace Entity_Samourai
 {
-    public class Arme
+    public class Arme : Ideable
     {
-        public int? Id { get; set; }
         public string Nom { get; set; }
         public int Degats { get; set; }
     }
