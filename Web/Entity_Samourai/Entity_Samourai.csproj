@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,9 +49,39 @@
   <ItemGroup>
     <Compile Include="Arme.cs" />
     <Compile Include="ArtMartial.cs" />
+    <Compile Include="Data\TPSamsamContext.cs" />
     <Compile Include="Ideable.cs" />
+    <Compile Include="Migrations\202009230919474_InitialCreate.cs" />
+    <Compile Include="Migrations\202009230919474_InitialCreate.Designer.cs">
+      <DependentUpon>202009230919474_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009231017194_duKungFuDansLesMains.cs" />
+    <Compile Include="Migrations\202009231017194_duKungFuDansLesMains.Designer.cs">
+      <DependentUpon>202009231017194_duKungFuDansLesMains.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009231203484_duKungFuDansLesPieds.cs" />
+    <Compile Include="Migrations\202009231203484_duKungFuDansLesPieds.Designer.cs">
+      <DependentUpon>202009231203484_duKungFuDansLesPieds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Samourai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Unikashi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009230919474_InitialCreate.resx">
+      <DependentUpon>202009230919474_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009231017194_duKungFuDansLesMains.resx">
+      <DependentUpon>202009231017194_duKungFuDansLesMains.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009231203484_duKungFuDansLesPieds.resx">
+      <DependentUpon>202009231203484_duKungFuDansLesPieds.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Arme.Degats)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtMartials)
+        </th>
         <th></th>
     </tr>
 
@@ -41,9 +44,15 @@
             @Html.DisplayFor(modelItem => item.Arme.Degats)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @foreach (var itoum in item.ArtMartials)
+            {
+                @itoum.Nom <br/>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, htmlAttributes: new { @class = "btn btn-primary"} ) 
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, htmlAttributes: new { @class = "btn btn-primary"}) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, htmlAttributes: new { @class = "btn btn-primary"})
         </td>
     </tr>
 }

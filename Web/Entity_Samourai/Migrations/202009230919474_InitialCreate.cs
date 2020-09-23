@@ -1,9 +1,9 @@
-namespace TPSamsam.Migrations
+namespace BO.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MigrationDojo : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -30,12 +30,27 @@ namespace TPSamsam.Migrations
                 .ForeignKey("dbo.Armes", t => t.Arme_Id)
                 .Index(t => t.Arme_Id);
             
+            CreateTable(
+                "dbo.ArtMartials",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Nom = c.String(),
+                        Samourai_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Samourais", t => t.Samourai_Id)
+                .Index(t => t.Samourai_Id);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.ArtMartials", "Samourai_Id", "dbo.Samourais");
             DropForeignKey("dbo.Samourais", "Arme_Id", "dbo.Armes");
+            DropIndex("dbo.ArtMartials", new[] { "Samourai_Id" });
             DropIndex("dbo.Samourais", new[] { "Arme_Id" });
+            DropTable("dbo.ArtMartials");
             DropTable("dbo.Samourais");
             DropTable("dbo.Armes");
         }

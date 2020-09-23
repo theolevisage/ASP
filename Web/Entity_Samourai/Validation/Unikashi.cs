@@ -16,17 +16,18 @@ namespace Entity_Samourai.Validation
 
         public override bool IsValid(object value)
         {
+            var result = true;
+            int? arme = value as int?;
             using (var db = new TPSamsamContext())
             {
-
+                var equiped = db.Samourais.Where(x => x.Arme.Id == arme).ToList().Count();
+               if (equiped > 0)
+                {
+                    result = false;
+                }
             }
-            db.Armes.
-            return base.IsValid(value);
-        }
-
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            return base.IsValid(value, validationContext);
+            
+            return result;
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace TPSamsam.Migrations
+namespace BO.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -10,6 +10,7 @@ namespace TPSamsam.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "TPSamsam.Data.TPSamsamContext";
         }
 
         protected override void Seed(TPSamsam.Data.TPSamsamContext context)

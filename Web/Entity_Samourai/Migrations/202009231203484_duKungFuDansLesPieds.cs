@@ -1,9 +1,9 @@
-namespace TPSamsam.Migrations
+namespace BO.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MigrationDojo2 : DbMigration
+    public partial class duKungFuDansLesPieds : DbMigration
     {
         public override void Up()
         {

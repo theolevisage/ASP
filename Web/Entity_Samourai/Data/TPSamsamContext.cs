@@ -22,5 +22,13 @@ namespace TPSamsam.Data
         public System.Data.Entity.DbSet<Entity_Samourai.Samourai> Samourais { get; set; }
 
         public System.Data.Entity.DbSet<Entity_Samourai.Arme> Armes { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Entity_Samourai.Samourai>().HasOptional(x => x.Arme);
+            modelBuilder.Entity<Entity_Samourai.Samourai>().HasMany(x => x.ArtMartials).WithMany();
+        }
+
+        public System.Data.Entity.DbSet<Entity_Samourai.ArtMartial> ArtMartials { get; set; }
     }
 }

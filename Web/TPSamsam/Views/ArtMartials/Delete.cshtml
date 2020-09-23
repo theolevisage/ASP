@@ -1,4 +1,4 @@
-﻿@model Entity_Samourai.Arme
+﻿@model Entity_Samourai.ArtMartial
 
 @{
     ViewBag.Title = "Delete";
@@ -8,25 +8,15 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Arme</h4>
+    <h4>ArtMartial</h4>
     <hr />
     <dl class="dl-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <dt>
             @Html.DisplayNameFor(model => model.Nom)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Nom)
-            @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Degats)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Degats)
         </dd>
 
     </dl>

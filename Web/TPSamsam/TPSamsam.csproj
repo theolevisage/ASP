@@ -127,24 +127,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArmeController.cs" />
+    <Compile Include="Controllers\ArtMartialsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SamouraiController.cs" />
-    <Compile Include="Data\TPSamsamContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009211445478_MigrationDojo.cs" />
-    <Compile Include="Migrations\202009211445478_MigrationDojo.Designer.cs">
-      <DependentUpon>202009211445478_MigrationDojo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009220732305_MigrationDojo2.cs" />
-    <Compile Include="Migrations\202009220732305_MigrationDojo2.Designer.cs">
-      <DependentUpon>202009220732305_MigrationDojo2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\VMDojo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\Unikashi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -194,6 +184,11 @@
     <Content Include="Views\Arme\Index.cshtml" />
     <Content Include="Views\Shared\_samuraiGen.cshtml" />
     <Content Include="Views\Shared\_samuraiRead.cshtml" />
+    <Content Include="Views\ArtMartials\Create.cshtml" />
+    <Content Include="Views\ArtMartials\Delete.cshtml" />
+    <Content Include="Views\ArtMartials\Details.cshtml" />
+    <Content Include="Views\ArtMartials\Edit.cshtml" />
+    <Content Include="Views\ArtMartials\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -216,14 +211,6 @@
       <Project>{0bba0441-0ab7-4112-946b-521c9cec7367}</Project>
       <Name>Entity_Samourai</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009211445478_MigrationDojo.resx">
-      <DependentUpon>202009211445478_MigrationDojo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009220732305_MigrationDojo2.resx">
-      <DependentUpon>202009220732305_MigrationDojo2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
