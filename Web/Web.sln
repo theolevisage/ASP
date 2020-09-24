@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity_Samourai", "Entity_S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPSamsam", "TPSamsam\TPSamsam.csproj", "{26468180-076F-45EF-B435-EF4811DC15F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OGameTP", "OGameTP\OGameTP.csproj", "{16B94351-06BA-4DCD-8E34-0BB3629527FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{26468180-076F-45EF-B435-EF4811DC15F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26468180-076F-45EF-B435-EF4811DC15F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26468180-076F-45EF-B435-EF4811DC15F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B94351-06BA-4DCD-8E34-0BB3629527FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B94351-06BA-4DCD-8E34-0BB3629527FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B94351-06BA-4DCD-8E34-0BB3629527FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B94351-06BA-4DCD-8E34-0BB3629527FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

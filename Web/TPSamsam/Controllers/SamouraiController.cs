@@ -13,6 +13,21 @@ namespace TPSamsam.Controllers
     {
         private TPSamsamContext db = new TPSamsamContext();
 
+        private void InitList(VMDojo vm)
+        {
+            var armesUsed = db.Samourais.Select(x => x.Arme.Id).ToList();
+            vm.Armes = db.Armes.Where(x => !armesUsed.Any(y => y == x.Id)).ToList();
+            if (vm.Samourai != null)
+            {
+                    var armeEquiped = db.Armes.First(x => vm.IdArme != null && x.Id == vm.IdArme);
+                    if (armeEquiped != null)
+                    {
+                        vm.Armes.Add(armeEquiped);
+                    }
+                
+            }
+            vm.ArtMartials = db.ArtMartials.ToList();
+        }
         // GET: Samourais
         public ActionResult Index()
         {
@@ -38,9 +53,7 @@ namespace TPSamsam.Controllers
         public ActionResult Create()
         {
             VMDojo vm = new VMDojo();
-            var armesUsed = db.Samourais.Select(x => x.Arme.Id).ToList();
-            vm.Armes = db.Armes.Where(x => !armesUsed.Any(y => y == x.Id)).ToList();
-            vm.ArtMartials = db.ArtMartials.ToList();
+            InitList(vm);
             return View(vm);
         }
 
@@ -63,9 +76,7 @@ namespace TPSamsam.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            var armesUsed = db.Samourais.Select(x => x.Arme.Id).ToList();
-            vm.Armes = db.Armes.Where(x => !armesUsed.Any(y => y == x.Id)).ToList();
-            vm.ArtMartials = db.ArtMartials.ToList();
+            InitList(vm);
             return View(vm);
         }
 
@@ -87,8 +98,7 @@ namespace TPSamsam.Controllers
             {
                 vm.IdArtMArtials = samourai.ArtMartials.Select(x => x.Id).ToList();
             }
-            vm.Armes = db.Armes.ToList();
-            vm.ArtMartials = db.ArtMartials.ToList();
+            InitList(vm);
             if (samourai == null)
             {
                 return HttpNotFound();
@@ -105,7 +115,7 @@ namespace TPSamsam.Controllers
         {
             if (ModelState.IsValid)
             {
-                Samourai sam = db.Samourais.Include(x => x.Arme).Include(x => x.ArtMartials).FirstOrDefault(x => x.Id == vm.Samourai.Id);
+                Samourai sam = db.Samourais.Include(x => x.Arme).FirstOrDefault(x => x.Id == vm.Samourai.Id);
                 sam.Force = vm.Samourai.Force;
                 sam.Nom = vm.Samourai.Nom;
                 Arme arme = db.Armes.Find(vm.IdArme);
@@ -119,9 +129,7 @@ namespace TPSamsam.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            var armesUsed = db.Samourais.Select(x => x.Arme.Id).ToList();
-            vm.Armes = db.Armes.Where(x => !armesUsed.Any(y => y == x.Id)).ToList();
-            vm.ArtMartials = db.ArtMartials.ToList();
+            InitList(vm);
             return View(vm);
         }
 

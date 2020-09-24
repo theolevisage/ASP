@@ -52,7 +52,7 @@ namespace Entity_Pizz.Validation
 
             if (result == false)
             {
-                return new ValidationResult("Ces ingredients sont déjà utilisés");
+                return new ValidationResult("Tu fais dla marde osti ! Soit créatif bordel de dieu !");
             }
             else
             {
