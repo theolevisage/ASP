@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Entity_Pizz;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using TPModule3.Database;
-using TPPizza.Models;
 
 namespace TPPizza.Controllers
 {
